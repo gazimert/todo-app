@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Todo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-2">
+      <p>
+        <a class="btn btn-outline-success" th:href="@{/}">
+          <i class="bi bi-arrow-left-square-fill"></i> Back
+        </a>
+      </p>
+    </div>
+    <div class="col-6">
+      <h2>Add a new Todo Item</h2>
+      <form action="#" th:action="@{/todo}" th:object="${todoItem}" method="POST">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" type="text" th:field="*{description}" id="description"
+                 placeholder="Description">
+          <button type="submit" class="btn btn-outline-success">
+            <i class="bi bi-plus-square-fill"></i>Add Todo
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
