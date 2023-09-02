@@ -30,7 +30,7 @@ public class TodoFormController {
     }
 
     @PostMapping("/todo")
-    public String createTodoItem(@Valid TodoItem todoItem, BindingResult result, Model model){
+    public String createTodoItem(@Valid TodoItem todoItem){
         TodoItem item = new TodoItem();
         item.setDescription(todoItem.getDescription());
         item.setComplete(todoItem.isComplete());
@@ -40,7 +40,7 @@ public class TodoFormController {
     }
 
     @GetMapping("/delete")
-    public String deleteTodoItem(@RequestParam("id") int id, Model model){
+    public String deleteTodoItem(@RequestParam("id") int id){
         todoItemService.deleteById(id);
 
         return "redirect:/";
